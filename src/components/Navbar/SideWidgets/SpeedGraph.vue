@@ -28,7 +28,8 @@ const chartOptions: ApexOptions = {
     show: true,
     curve: 'smooth',
     lineCap: 'round',
-    width: 4
+    width: 4,
+    // dashArray: [0,0,4,4]
   },
   fill: {
     type: 'gradient',
@@ -62,8 +63,16 @@ const series = computed(() => [
     data: navbarStore.uploadData
   },
   {
+    name: t('navbar.side.speed_graph.upload_limit_label'),
+    data: navbarStore.uploadLimit
+  },
+  {
     name: t('navbar.side.speed_graph.download_label'),
     data: navbarStore.downloadData
+  },
+  {
+    name: t('navbar.side.speed_graph.download_limit_label'),
+    data: navbarStore.downloadLimit
   }
 ])
 </script>
